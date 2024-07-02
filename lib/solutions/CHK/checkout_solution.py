@@ -1,4 +1,4 @@
-from pricing import item_price_map, specials
+from CHK.pricing import item_price_map, specials
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -46,3 +46,4 @@ def calculate_total(item_count: dict, item_price_map: dict) -> int:
             total_value += individual_total
     
     return total_value
+
