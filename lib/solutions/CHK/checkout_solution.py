@@ -35,8 +35,11 @@ def checkout(skus):
         group_total = group_count * offer_value
 
         total_value += individual_total + group_total
+
     
     
+
     
+
 
 
