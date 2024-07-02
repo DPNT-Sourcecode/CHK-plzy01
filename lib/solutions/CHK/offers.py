@@ -1,4 +1,5 @@
 
+# TODO: better names
 class OfferType1:
     """ Multibuy offer. e.g buy x amount of A for a discounted price"""
     multiple: int

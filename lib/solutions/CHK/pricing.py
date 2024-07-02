@@ -11,14 +11,19 @@ item_price_map = {
 
 
 specials = {
-    "A": (
-        OfferType1(multiple=5, value=200),
-        OfferType1(multiple=3, value=130),
-    ),
-    "B": (
-        OfferType1(multiple=2, value=45),
-    ),
-    # "E": (
-    #     OfferType2(multiple=2, item="B"),
-    # ),
+    "type1": {
+        "A": (
+            OfferType1(multiple=5, value=200),
+            OfferType1(multiple=3, value=130),
+        ),
+        "B": (
+            OfferType1(multiple=2, value=45),
+        ),
+        }
+    "type2": {
+        "E": (
+            OfferType2(multiple=2, item="B"),
+        ),
+    }
+
 }
