@@ -9,9 +9,15 @@ def checkout(skus):
         "C": 20,
         "D": 15,
     }
-    
-    item_count = dict.fromkeys(, 0)
 
-    for item in 
+    item_count = dict.fromkeys(item_price_map.keys(), 0)
+
+    for item in skus:
+        try:
+            item_count[item] += 1
+        except KeyError:
+            # Invalid SKU value
+            return -1
+
 
 
