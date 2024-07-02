@@ -5,7 +5,3 @@ class TestHello():
         name = "Jeff"
         assert hello_solution.hello(name) == f"Hello, {name}!"
 
-
-
-
-
