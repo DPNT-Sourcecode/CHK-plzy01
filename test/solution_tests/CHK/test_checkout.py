@@ -11,5 +11,6 @@ class TestCheckout():
             assert checkout_solution.checkout(skus) == expected_total
     
     def test_illegal_input(self):
-        skus = "ABZD"
-        assert checkout_solution.checkout(skus) == -1
+        cases = ("ABZD", 1, True)
+        for skus in cases:
+            assert checkout_solution.checkout(skus) == -1
