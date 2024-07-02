@@ -8,6 +8,9 @@ class TestCheckout():
             # ("ABCDEE", 50 + 30 + 20 + 15 + 80),
             # ("AAABACAA", 200 + 50 + 30 + 20),
             ("A" * 9 + "BBBEE", 380 + 45 + 40 + 40),
+            ("EEB", 80),
+            ("EEEB", 120),
+            ("EEEEBB", 160),
         )
 
         for skus, expected_total in cases:
