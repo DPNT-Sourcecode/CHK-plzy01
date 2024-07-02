@@ -5,6 +5,7 @@ class TestCheckout():
         cases = (
             ("AAABBCD", 130 + 45 + 20 + 15),
             ("BAAAACCD", 30 + 130 + 50 + 40 + 15)
+            ("ABCD",  + 45 + 20 + 15),
         )
 
         for skus, expected_total in cases:

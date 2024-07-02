@@ -11,6 +11,7 @@ def checkout(skus: str) -> int:
         "B": 30,
         "C": 20,
         "D": 15,
+        "E": 40,
     }
 
     item_count = dict.fromkeys(item_price_map.keys(), 0)
