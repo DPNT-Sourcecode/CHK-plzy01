@@ -15,6 +15,7 @@ class TestCheckout():
             # ("FFF", 20),
             ("FFFF", 30),
             ("FFFFF", 30),
+            ("FFFFFF", 40),
         )
 
         for skus, expected_total in cases:
@@ -24,6 +25,7 @@ class TestCheckout():
         cases = ("ABZD", 1, True)
         for skus in cases:
             assert checkout_solution.checkout(skus) == -1
+
 
 
 
