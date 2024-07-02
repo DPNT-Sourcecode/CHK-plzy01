@@ -2,10 +2,13 @@ from lib.solutions.CHK import checkout_solution
 
 class TestCheckout():
     def test_checkout(self):
-        skus = "AAABBCD"
-        expected_total = 130 + 45 + 20 + 15
+        cases = (
+            ("AAABBCD", 130 + 45 + 20 + 15),
+            ("BAAAACCD", 30 + 130 + 50 + 40 + 15)
+        )
 
-        assert checkout_solution.checkout(skus) == expected_total
+        for skus, expected_total in cases:
+            assert checkout_solution.checkout(skus) == expected_total
     
     def test_illegal_input(self):
         skus = "ABZD"

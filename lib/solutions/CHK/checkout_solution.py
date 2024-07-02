@@ -38,17 +38,17 @@ def checkout(skus):
         total_value += individual_total + group_total
 
     # Price up individual items without offers
-    for item, price in item_price_map.keys():
+    for item, price in item_price_map.items():
         if item not in specials.keys():
-            total_value += item_count[item]
+            total_value += item_count[item] * price
 
-    
     return total_value
 
     
     
 
     
+
 
 
 
