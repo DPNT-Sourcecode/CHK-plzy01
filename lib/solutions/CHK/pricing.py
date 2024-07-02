@@ -1,4 +1,4 @@
-from offers import OfferType1, OfferType2
+from .offers import OfferType1, OfferType2
 
 
 item_price_map = {
@@ -18,7 +18,7 @@ specials = {
     "B": (
         OfferType1(multiple=2, value=45),
     ),
-    "E": (
-        OfferType2(multiple=2, item="B"),
-    ),
+    # "E": (
+    #     OfferType2(multiple=2, item="B"),
+    # ),
 }

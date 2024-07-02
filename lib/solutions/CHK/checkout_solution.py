@@ -1,4 +1,4 @@
-from CHK.pricing import item_price_map, specials
+from .pricing import item_price_map, specials
 
 # noinspection PyUnusedLocal
 # skus = unicode string
