@@ -1,18 +1,10 @@
-
+from pricing import item_price_map
 
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus: str) -> int:
     if not isinstance(skus, str):
         return -1
-
-    item_price_map = {
-        "A": 50,
-        "B": 30,
-        "C": 20,
-        "D": 15,
-        "E": 40,
-    }
 
     item_count = dict.fromkeys(item_price_map.keys(), 0)
 
