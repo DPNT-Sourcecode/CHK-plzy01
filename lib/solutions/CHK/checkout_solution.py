@@ -21,9 +21,10 @@ def checkout(skus):
     
     total_value = 0
     # specials
-
-    item_count["A"] % 
     
+    item_count["A"] % 3
+    
+
 
 
 
