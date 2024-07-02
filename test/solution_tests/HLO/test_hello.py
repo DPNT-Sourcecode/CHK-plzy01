@@ -1,7 +1,5 @@
-from lib.solutions.HLO import hello_solution
+from lib.solutions.CHK import checkout_solution
 
-class TestHello():
-    def test_hello(self):
-        name = "Jeff"
-        assert hello_solution.hello(name) == f"Hello, {name}!"
-
+class TestCheckout():
+    def test_checkout(self):
+        pass
