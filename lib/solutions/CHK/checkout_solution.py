@@ -18,6 +18,14 @@ def checkout(skus):
         except KeyError:
             # Invalid SKU value
             return -1
+    
+    total_value = 0
+    # specials
+
+    item_count["A"] % 
+    
+
+
 
 
 
