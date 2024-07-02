@@ -1,5 +1,8 @@
-from lib.solutions.CHK import checkout_solution
+from lib.solutions.HLO import hello_solution
 
-class TestCheckout():
-    def test_checkout(self):
-        pass
+class TestHello():
+    def test_sum(self):
+        name = "Jeff"
+        assert hello_solution.hello(name) == name
+
+
