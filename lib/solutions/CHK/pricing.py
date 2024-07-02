@@ -26,7 +26,7 @@ specials = {
             OfferType2(multiple=2, item="B"),
         ),
         "F": (
-            OfferType2(min=3, multiple=3, item="F"),
+            OfferType2(multiple=3, item="F"),
         ),
     }
 }

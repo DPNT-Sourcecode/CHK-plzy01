@@ -25,8 +25,7 @@ def calculate_total(item_count: dict, item_price_map: dict) -> int:
             remainder_count = item_count.get(item, 0) % offer.multiple
             group_count = (item_count.get(item, 0) - remainder_count) // offer.multiple
 
-            if item_count[item] >= offer.min:
-                item_count[offer.item] = max(item_count[offer.item] - group_count, 0)            
+            item_count[offer.item] = max(item_count[offer.item] - group_count, 0)            
 
     total_value = 0
     for item, price in item_price_map.items():
