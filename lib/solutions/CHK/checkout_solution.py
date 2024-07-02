@@ -9,10 +9,9 @@ def checkout(skus):
         "C": 20,
         "D": 15,
     }
-
-    item_count = {
-        
-    }
+    
+    item_count = dict.fromkeys(, 0)
 
     for item in 
+
 
