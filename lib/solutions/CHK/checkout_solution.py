@@ -20,7 +20,7 @@ def checkout(skus: str) -> int:
 
 def calculate_total(item_count: dict, item_price_map: dict) -> int:
 
-    for item, offers in specials["type2"].items():
+    for item, offers in specials["type2"]:
         for offer in offers:
             remainder_count = item_count.get(item, 0) % offer.multiple
             group_count = (item_count.get(item, 0) - remainder_count) // offer.multiple
@@ -52,5 +52,6 @@ def calculate_total(item_count: dict, item_price_map: dict) -> int:
             total_value += individual_total
     
     return total_value
+
 
 
