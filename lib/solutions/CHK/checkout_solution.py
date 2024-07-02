@@ -53,4 +53,3 @@ def calculate_total(item_count: dict, item_price_map: dict) -> int:
             total_value += individual_total
     
     return total_value
-
