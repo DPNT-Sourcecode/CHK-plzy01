@@ -47,16 +47,16 @@ def calculate_total(item_count: dict, item_price_map: dict) -> int:
                 if remainder_count is not None:
                     total_remaining = remainder_count
                     remainder_count =  total_remaining % offer_multiple
-                    group_count = total_remaining - remainder_count // offer_multiple
+                    group_count = (total_remaining - remainder_count) // offer_multiple
 
                 else:
                     remainder_count =  item_count.get(item, 0) % offer_multiple
                     group_count = (item_count.get(item, 0) - remainder_count) // offer_multiple
+            
+                total_value += group_count * offer_value
 
             individual_total = remainder_count * item_price_map[item]
-            group_total = group_count * offer_value
-
-            total_value += individual_total + group_total
+            total_value += individual_total
     
     return total_value
 
