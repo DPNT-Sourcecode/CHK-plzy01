@@ -19,13 +19,14 @@ def checkout(skus: str) -> int:
 
 
 def calculate_total(item_count: dict, item_price_map: dict) -> int:
-    total_value = 0
-    # Highest value offer to lowest value order
 
     for item, offers in specials["type2"]:
         for offer in offers:
-            if item_count[item]
+            remainder_count = item_count.get(item, 0) % offer.multiple
+            group_count = (total_remaining - remainder_count) // offer.multiple
+            
 
+    total_value = 0
     for item, price in item_price_map.items():
         if item not in specials.keys():
              # Price up individual items without offers
