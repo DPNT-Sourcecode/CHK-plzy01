@@ -19,8 +19,13 @@ def checkout(skus):
             # Invalid SKU value
             return -1
     
+
+    return calculate_total(item_count, item_price_map)
+
+    
+
+def calculate_total(item_count: dict, item_price_map: dict) -> int:
     total_value = 0
-    # specials
     specials = {
         "A": (3, 130),
         "B": (2, 45),
@@ -38,17 +43,12 @@ def checkout(skus):
         total_value += individual_total + group_total
 
     # Price up individual items without offers
+    # This could be made more efficient by moving this into a single loop with the above
     for item, price in item_price_map.items():
         if item not in specials.keys():
             total_value += item_count[item] * price
-
+    
     return total_value
-
-    
-    
-
-    
-
 
 
 
