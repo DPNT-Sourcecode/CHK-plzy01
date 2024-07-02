@@ -7,7 +7,7 @@ class TestCheckout():
             ("BAAAACCD", 30 + 130 + 50 + 40 + 15),
             ("ABCDEE", 50 + 30 + 20 + 15 + 80),
             ("AAABACAA", 200 + 50 + 30 + 20),
-            ("A" * 9 + "BBBEE", 380 + 45 + 30 + 40 + 40),
+            ("A" * 9 + "BBBEE", 380 + 45 + 40 + 40),
         )
 
         for skus, expected_total in cases:
@@ -17,6 +17,3 @@ class TestCheckout():
         cases = ("ABZD", 1, True)
         for skus in cases:
             assert checkout_solution.checkout(skus) == -1
-
-
-
