@@ -1,7 +1,6 @@
-from lib.solutions.HLO_R1 import one
+from solutions.TST import one
 
 
 class TestSum():
-    def test_hello(self):
+    def test_sum(self):
         assert one.get() == 1
-
