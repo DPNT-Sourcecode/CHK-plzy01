@@ -21,12 +21,15 @@ def checkout(skus):
     
     total_value = 0
     # specials
+    specials = {
+        "A": (3, 130),
+        "B": (2, 45),
+    }
+
+    for item, offer in specials.items():
+        individual_count = item_count[item] % offer[0]
+        group_count = (item_count[item] - individual_count) % offer[0]
+
+        individual_total = individual_count * 
     
-    item_count["A"] % 3
-    
-
-
-
-
-
 
