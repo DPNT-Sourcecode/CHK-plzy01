@@ -29,7 +29,7 @@ def checkout(skus):
     for item, offer in specials.items():
         offer_multiple, offer_value = offer
         individual_count = item_count.get(item, 0) % offer_multiple
-        group_count = (item_count.get(item, 0) - individual_count) % offer_multiple
+        group_count = (item_count.get(item, 0) - individual_count) / offer_multiple
 
         individual_total = individual_count * item_price_map[item]
         group_total = group_count * offer_value
@@ -40,6 +40,7 @@ def checkout(skus):
     
 
     
+
 
 
 
