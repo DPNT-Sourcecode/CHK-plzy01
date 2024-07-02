@@ -31,7 +31,7 @@ def calculate_total(item_count: dict, item_price_map: dict) -> int:
     # Highest value offer to lowest value order
     specials = {
         "A": ((5, 200), (3, 130)),
-        "B": ((2, 45)),
+        "B": ((2, 45),),
     }
 
     for item, price in item_price_map.items():
@@ -59,6 +59,7 @@ def calculate_total(item_count: dict, item_price_map: dict) -> int:
             total_value += individual_total
     
     return total_value
+
 
 
 
