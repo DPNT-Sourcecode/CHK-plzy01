@@ -24,7 +24,6 @@ def checkout(skus: str) -> int:
 
     return calculate_total(item_count, item_price_map)
 
-    
 
 def calculate_total(item_count: dict, item_price_map: dict) -> int:
     total_value = 0
@@ -35,21 +34,17 @@ def calculate_total(item_count: dict, item_price_map: dict) -> int:
 
     for item, price in item_price_map.items():
         if item not in specials.keys():
+             # Price up individual items without offers
             total_value += item_count[item] * price
         else:
-    # Price up items with special offers
-    for item, offer in specials.items():
-        offer_multiple, offer_value = offer
-        individual_count = item_count.get(item, 0) % offer_multiple
-        group_count = (item_count.get(item, 0) - individual_count) // offer_multiple
+            # Price up items with special offers
+            offer_multiple, offer_value = specials[item]
+            individual_count = item_count.get(item, 0) % offer_multiple
+            group_count = (item_count.get(item, 0) - individual_count) // offer_multiple
 
-        individual_total = individual_count * item_price_map[item]
-        group_total = group_count * offer_value
+            individual_total = individual_count * item_price_map[item]
+            group_total = group_count * offer_value
 
-        total_value += individual_total + group_total
-
-    # Price up individual items without offers
-    # This could be made more efficient by moving this into a single loop with the above
-
+            total_value += individual_total + group_total
     
     return total_value
