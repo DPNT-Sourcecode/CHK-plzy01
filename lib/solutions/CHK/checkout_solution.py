@@ -29,8 +29,8 @@ def checkout(skus: str) -> int:
 def calculate_total(item_count: dict, item_price_map: dict) -> int:
     total_value = 0
     specials = {
-        "A": (3, 130),
-        "B": (2, 45),
+        "A": ((5, 200), (3, 130)),
+        "B": ((2, 45)),
     }
 
     for item, price in item_price_map.items():
