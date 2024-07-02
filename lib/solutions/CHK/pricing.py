@@ -7,6 +7,7 @@ item_price_map = {
     "C": 20,
     "D": 15,
     "E": 40,
+    "F": 10,
 }
 
 
@@ -23,6 +24,9 @@ specials = {
     "type2": {
         "E": (
             OfferType2(multiple=2, item="B"),
+        ),
+        "F": (
+            OfferType2(multiple=3, item="F"),
         ),
     }
 }

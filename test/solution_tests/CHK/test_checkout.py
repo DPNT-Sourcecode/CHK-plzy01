@@ -11,6 +11,9 @@ class TestCheckout():
             ("EEB", 80),
             ("EEEB", 120),
             ("EEEEBB", 160),
+            ("FF", 20),
+            ("FFF", 20),
+            ("FFFFF", 30),
         )
 
         for skus, expected_total in cases:
