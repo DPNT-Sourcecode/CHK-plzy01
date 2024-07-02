@@ -26,8 +26,7 @@ def checkout(skus):
         "B": (2, 45),
     }
 
-    for item
-
+    # Price up items with special offers
     for item, offer in specials.items():
         offer_multiple, offer_value = offer
         individual_count = item_count.get(item, 0) % offer_multiple
@@ -38,7 +37,11 @@ def checkout(skus):
 
         total_value += individual_total + group_total
 
-    
+    # Price up individual items without offers
+    for item, price in item_price_map.keys():
+        if item not in specials.keys():
+            total_value += item_count[item]
+
     
     return total_value
 
@@ -46,6 +49,7 @@ def checkout(skus):
     
 
     
+
 
 
 
