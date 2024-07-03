@@ -77,13 +77,15 @@ def process_type3_offers(item_count: dict, item_price_map: dict) -> tuple[dict, 
         sorted_item_price_map = dict(sorted(item_price_map.items(), key=lambda item: item[1], reverse=True))
 
         # Highest value items should be discounted first.
-        for item in sorted_item_price_map:
-            while item_count[item] > 0 and eligible_item_total > 0:
-                item_count[item] -= 1
-                eligible_item_total -= 1
-    
+        if eligible_item_total > offer.multiple:
+            for item in sorted_item_price_map:
+                while item_count[item] > 0 and eligible_item_total > 0:
+                    item_count[item] -= 1
+                    eligible_item_total -= 1
+        
     return item_count, total_discounted_value
     
+
 
 
 
