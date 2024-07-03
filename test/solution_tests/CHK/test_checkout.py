@@ -48,7 +48,7 @@ class TestCheckout():
             ("VVV", 130),
             ("W", 20),
             ("X", 17),
-            ("Y", 10),
+            ("Y", 20),
             ("Z", 21),
             ("STX", 45),
             ("TXY", 45),
@@ -59,6 +59,8 @@ class TestCheckout():
             ("ZXSSS", 45 + 20 + 17),
             ("ZZXSSS", 90),
             ("TTSSZZZ", 45 + 45 + 20),
+            ("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ", 1602),
+            ("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH", 1602),
         )
     )
     def test_checkout(self, skus, expected_total):
