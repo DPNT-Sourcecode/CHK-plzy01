@@ -24,4 +24,3 @@ class OfferType2:
     def __init__(self, multiple: int = 0, item: str | None = None) -> None:
         self.multiple = multiple
         self.item = item
-

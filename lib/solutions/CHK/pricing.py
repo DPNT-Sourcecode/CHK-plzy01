@@ -23,10 +23,14 @@ item_price_map = {
     "S": 30,
     "T": 20,
     "U": 40,
-    "V":
+    "V": 50,
+    "W": 20,
+    "X": 90,
+    "Y": 10,
+    "Z": 50
 }
 
-
+# Order of offers should be Highest value -> Lowest value
 specials = {
     OfferTypes.TYPE_1: {
         "A": (
@@ -37,8 +41,8 @@ specials = {
             OfferType1(multiple=2, value=45),
         ),
         "H": (
-            OfferType1(multiple=5, value=45),
             OfferType1(multiple=10, value=80),
+            OfferType1(multiple=5, value=45),
         ),
         "K": (
             OfferType1(multiple=2, value=150),
@@ -48,6 +52,10 @@ specials = {
         ),
         "Q": (
             OfferType1(multiple=3, value=80),
+        ),
+        "V": (
+            OfferType1(multiple=3, value=130),
+            OfferType1(multiple=2, value=90),
         ),
     },
     OfferTypes.TYPE_2: {
@@ -68,4 +76,3 @@ specials = {
         ),
     }
 }
-

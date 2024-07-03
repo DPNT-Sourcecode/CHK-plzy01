@@ -61,4 +61,3 @@ def process_type2_offers(item_count: dict) -> dict:
             item_count[offer.item] = max(item_count[offer.item] - group_count, 0)       
     
     return item_count
-
