@@ -22,7 +22,20 @@ class TestCheckout():
             ("G", 20),
             ("H", 10),
             ("H" * 5, 45),
-            ("H" * 10, 80)
+            ("H" * 10, 80),
+            ("H" * 16, 80 + 45 + 10),
+            ("I", 35),
+            ("J", 60),
+            ("K", 80),
+            ("KK", 150),
+            ("L", 90),
+            ("M", 15),
+            ("N", 40),
+            ("NNNM", 120),
+            ("O", 10),
+            ("P", 50),
+            ("P" * 5, 200),
+            
         )
     )
     def test_checkout(self, skus, expected_total):
@@ -31,3 +44,4 @@ class TestCheckout():
     @pytest.mark.parametrize("skus", ("ABZD", "", 1, True))
     def test_illegal_input(self, skus):
         assert checkout_solution.checkout(skus) == -1
+
