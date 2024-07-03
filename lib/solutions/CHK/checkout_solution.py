@@ -4,7 +4,7 @@ from .offers import OfferTypes
 # noinspection PyUnusedLocal
 # skus = unicode string
 def checkout(skus: str) -> int:
-    if not isinstance(skus, str):
+    if not isinstance(skus, str) or not skus:
         return -1
 
     item_count = dict.fromkeys(item_price_map.keys(), 0)
