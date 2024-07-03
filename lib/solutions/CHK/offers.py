@@ -1,3 +1,9 @@
+from enum import Enum
+
+class OfferTypes(Enum):
+    TYPE_1 = 0
+    TYPE_2 = 1
+
 
 # TODO: better names
 class OfferType1:
@@ -18,3 +24,4 @@ class OfferType2:
     def __init__(self, multiple: int = 0, item: str | None = None) -> None:
         self.multiple = multiple
         self.item = item
+

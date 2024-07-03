@@ -1,4 +1,5 @@
 from .pricing import item_price_map, specials
+from .offers import OfferTypes
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -20,7 +21,7 @@ def checkout(skus: str) -> int:
 
 def calculate_total(item_count: dict, item_price_map: dict) -> int:
 
-    for item, offers in specials["type2"].items():
+    for item, offers in specials[OfferTypes.TYPE_2].items():
         for offer in offers:
             remainder_count = item_count.get(item, 0) % offer.multiple
             group_count = (item_count.get(item, 0) - remainder_count) // offer.multiple
@@ -29,26 +30,31 @@ def calculate_total(item_count: dict, item_price_map: dict) -> int:
 
     total_value = 0
     for item, price in item_price_map.items():
-        if item not in specials["type1"].keys():
+        if item not in specials[OfferTypes.TYPE_1].keys():
              # Price up individual items without offers
             total_value += item_count[item] * price
         else:
-            remainder_count = None
-            for offer in specials["type1"][item]:
-                # Price up items with special offers
-
-                if remainder_count is not None:
-                    total_remaining = remainder_count
-                    remainder_count =  total_remaining % offer.multiple
-                    group_count = (total_remaining - remainder_count) // offer.multiple
-
-                else:
-                    remainder_count =  item_count.get(item, 0) % offer.multiple
-                    group_count = (item_count.get(item, 0) - remainder_count) // offer.multiple
-            
-                total_value += group_count * offer.value
+ 
 
             individual_total = remainder_count * item_price_map[item]
             total_value += individual_total
     
     return total_value
+
+
+def process_type1_offers() -> int:
+    remainder_count = None
+    for offer in specials[OfferTypes.TYPE_1][item]:
+        # Price up items with special offers
+
+        if remainder_count is not None:
+            total_remaining = remainder_count
+            remainder_count =  total_remaining % offer.multiple
+            group_count = (total_remaining - remainder_count) // offer.multiple
+
+        else:
+            remainder_count =  item_count.get(item, 0) % offer.multiple
+            group_count = (item_count.get(item, 0) - remainder_count) // offer.multiple
+    
+        total_value += group_count * offer.value
+        

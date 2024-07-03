@@ -1,4 +1,4 @@
-from .offers import OfferType1, OfferType2
+from .offers import OfferType1, OfferType2, OfferTypes
 
 
 item_price_map = {
@@ -12,7 +12,7 @@ item_price_map = {
 
 
 specials = {
-    "type1": {
+    OfferTypes.TYPE_1: {
         "A": (
             OfferType1(multiple=5, value=200),
             OfferType1(multiple=3, value=130),
@@ -21,7 +21,7 @@ specials = {
             OfferType1(multiple=2, value=45),
         ),
     },
-    "type2": {
+    OfferTypes.TYPE_2: {
         "E": (
             OfferType2(multiple=2, item="B"),
         ),
