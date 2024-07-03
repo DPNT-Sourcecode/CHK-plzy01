@@ -12,7 +12,7 @@ item_price_map = {
     "H": 10,
     "I": 35,
     "J": 60,
-    "K": 80,
+    "K": 70,
     "L": 90,
     "M": 15,
     "N": 40,
@@ -45,7 +45,7 @@ specials = {
             OfferType1(multiple=5, value=45),
         ),
         "K": (
-            OfferType1(multiple=2, value=150),
+            OfferType1(multiple=2, value=120),
         ),
         "P": (
             OfferType1(multiple=5, value=200),
