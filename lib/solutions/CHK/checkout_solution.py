@@ -34,16 +34,17 @@ def calculate_total(item_count: dict, item_price_map: dict) -> int:
              # Price up individual items without offers
             total_value += item_count[item] * price
         else:
- 
+            group_offers_total, remainder_count = process_type1_offers(item, item_count)
 
             individual_total = remainder_count * item_price_map[item]
-            total_value += individual_total
+            total_value += individual_total + group_offers_total
     
     return total_value
 
 
-def process_type1_offers() -> int:
+def process_type1_offers(item: str, item_count: dict) -> int, int | None:
     remainder_count = None
+    total_value = 0
     for offer in specials[OfferTypes.TYPE_1][item]:
         # Price up items with special offers
 
@@ -57,4 +58,5 @@ def process_type1_offers() -> int:
             group_count = (item_count.get(item, 0) - remainder_count) // offer.multiple
     
         total_value += group_count * offer.value
-        
+
+    return total_value
