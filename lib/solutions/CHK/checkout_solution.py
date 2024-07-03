@@ -75,7 +75,11 @@ def process_type3_offers(item_count: dict, item_price_map: dict) -> tuple[dict, 
         total_discounted_value += total_groupings * offer.value
 
         # Gives us a mapping of items sorted by value, in descending order.
+
+
         sorted_item_price_map = dict(sorted(item_price_map.items(), key=lambda item: item[1], reverse=True))
+
+        discount_items_price_map = {}
 
         # Highest value items should be discounted first.
         for item in sorted_item_price_map:
@@ -85,3 +89,4 @@ def process_type3_offers(item_count: dict, item_price_map: dict) -> tuple[dict, 
         
     return item_count, total_discounted_value
     
+
