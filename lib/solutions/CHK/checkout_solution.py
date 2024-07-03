@@ -71,6 +71,7 @@ def process_type3_offers(item_count: dict, item_price_map: dict) -> tuple[dict, 
             eligible_item_total += item_count[item]
     
         total_groupings = (eligible_item_total - (eligible_item_total % offer.multiple)) // offer.multiple
+        total_items_to_discount = (total_groupings * offer.multiple) - eligible_item_total
         total_discounted_value += total_groupings * offer.value
 
         # Gives us a mapping of items sorted by value, in descending order.
@@ -85,6 +86,7 @@ def process_type3_offers(item_count: dict, item_price_map: dict) -> tuple[dict, 
         
     return item_count, total_discounted_value
     
+
 
 
 
