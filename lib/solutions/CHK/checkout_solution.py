@@ -85,11 +85,3 @@ def process_type3_offers(item_count: dict, item_price_map: dict) -> tuple[dict, 
         
     return item_count, total_discounted_value
     
-
-
-
-
-
-
-
-
