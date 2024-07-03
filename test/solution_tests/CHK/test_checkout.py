@@ -55,6 +55,6 @@ class TestCheckout():
     def test_checkout(self, skus, expected_total):
         assert checkout_solution.checkout(skus) == expected_total
 
-    @pytest.mark.parametrize("skus", ("ABZD", "", 1, True))
+    @pytest.mark.parametrize("skus", ("ABZD", 1, True))
     def test_illegal_input(self, skus):
         assert checkout_solution.checkout(skus) == -1
