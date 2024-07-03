@@ -2,7 +2,7 @@ from lib.solutions.CHK import checkout_solution
 import pytest
 
 class TestCheckout():
-    
+    # TODO: This should test the system rather than individual pricing and offers
     @pytest.mark.parametrize(
         "skus,expected_total",
         (
@@ -35,7 +35,14 @@ class TestCheckout():
             ("O", 10),
             ("P", 50),
             ("P" * 5, 200),
-            
+            ("Q", 30),
+            ("Q" * 3, 80),
+            ("R", 50),
+            ("RRRQ", 150),
+            ("S", 30),
+            ("T", 20),
+            ("U", 40),
+            ("")
         )
     )
     def test_checkout(self, skus, expected_total):
@@ -44,4 +51,5 @@ class TestCheckout():
     @pytest.mark.parametrize("skus", ("ABZD", "", 1, True))
     def test_illegal_input(self, skus):
         assert checkout_solution.checkout(skus) == -1
+
 
