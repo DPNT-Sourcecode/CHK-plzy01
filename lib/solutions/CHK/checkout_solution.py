@@ -21,10 +21,8 @@ def checkout(skus: str) -> int:
 
 def calculate_total(item_count: dict, item_price_map: dict) -> int:     
     item_count = process_type2_offers(item_count)
+    item_count, total_value = process_type3_offers(item_count, item_price_map)
 
-    # process_type3_offers()
-
-    total_value = 0
     for item, price in item_price_map.items():
         if item not in specials[OfferTypes.TYPE_1].keys():
             total_value += item_count[item] * price
@@ -65,7 +63,7 @@ def process_type2_offers(item_count: dict) -> dict:
     return item_count
 
 
-def process_type3_offers(item_count: dict, item_price_map: dict) -> dict:
+def process_type3_offers(item_count: dict, item_price_map: dict) -> tuple[dict, int]:
     total_discounted_value = 0
     for offer in specials[OfferTypes.TYPE_3]:
         eligible_item_total = 0
@@ -84,7 +82,8 @@ def process_type3_offers(item_count: dict, item_price_map: dict) -> dict:
                 item_count[item] -= 1
                 eligible_item_total -= 1
     
-    return 
+    return item_count, total_discounted_value
     
+
 
 
