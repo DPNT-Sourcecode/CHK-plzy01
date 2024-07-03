@@ -6,8 +6,8 @@ class TestCheckout():
     @pytest.mark.parametrize(
         "skus,expected_total",
         (
-            # ("AAABBCD", 130 + 45 + 20 + 15),
-            # ("BAAAACCD", 30 + 130 + 50 + 40 + 15),
+            ("AAABBCD", 130 + 45 + 20 + 15),
+            ("BAAAACCD", 30 + 130 + 50 + 40 + 15),
             ("ABCDE", 50 + 30 + 20 + 15 + 40),
             ("AAABACAA", 200 + 50 + 30 + 20),
             ("A" * 9 + "BBBEE", 380 + 45 + 40 + 40),
@@ -42,7 +42,14 @@ class TestCheckout():
             ("S", 30),
             ("T", 20),
             ("U", 40),
-            ("")
+            ("UUUU", 120),
+            ("V", 50),
+            ("VV", 90),
+            ("VVV", 130),
+            ("W", 20),
+            ("X", 90),
+            ("Y", 10),
+            ("Z", 50),
         )
     )
     def test_checkout(self, skus, expected_total):
@@ -51,5 +58,6 @@ class TestCheckout():
     @pytest.mark.parametrize("skus", ("ABZD", "", 1, True))
     def test_illegal_input(self, skus):
         assert checkout_solution.checkout(skus) == -1
+
 
 
