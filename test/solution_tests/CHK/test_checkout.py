@@ -1,8 +1,11 @@
 from lib.solutions.CHK import checkout_solution
+import pytest
 
 class TestCheckout():
-    def test_checkout(self):
-        cases = (
+    
+    @pytest.mark.parametrize(
+        "skus,expected_total",
+        (
             # ("AAABBCD", 130 + 45 + 20 + 15),
             # ("BAAAACCD", 30 + 130 + 50 + 40 + 15),
             ("ABCDE", 50 + 30 + 20 + 15 + 40),
@@ -17,9 +20,9 @@ class TestCheckout():
             ("FFFFF", 40),
             ("FFFFFF", 40),
         )
-
-        for skus, expected_total in cases:
-            assert checkout_solution.checkout(skus) == expected_total
+    )
+    def test_checkout(self, skus, expected_total):
+        assert checkout_solution.checkout(skus) == expected_total
     
     def test_illegal_input(self):
         cases = ("ABZD", 1, True)
