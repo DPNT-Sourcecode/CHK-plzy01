@@ -13,6 +13,17 @@ item_price_map = {
     "I": 35,
     "J": 60,
     "K": 80,
+    "L": 90,
+    "M": 15,
+    "N": 40,
+    "O": 10,
+    "P": 50,
+    "Q": 30,
+    "R": 50,
+    "S": 30,
+    "T": 20,
+    "U": 40,
+    "V":
 }
 
 
@@ -32,6 +43,12 @@ specials = {
         "K": (
             OfferType1(multiple=2, value=150),
         ),
+        "P": (
+            OfferType1(multiple=5, value=200),
+        ),
+        "Q": (
+            OfferType1(multiple=3, value=80),
+        ),
     },
     OfferTypes.TYPE_2: {
         "E": (
@@ -39,6 +56,15 @@ specials = {
         ),
         "F": (
             OfferType2(multiple=3, item="F"),
+        ),
+        "N": (
+            OfferType2(multiple=3, item="M"),
+        ),
+        "R": (
+            OfferType2(multiple=3, item="Q"),
+        ),
+        "U": (
+            OfferType2(multiple=4, item="U"),
         ),
     }
 }
