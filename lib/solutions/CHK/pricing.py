@@ -1,4 +1,4 @@
-from .offers import OfferType1, OfferType2, OfferTypes
+from .offers import OfferType1, OfferType2, OfferType3, OfferTypes
 
 
 item_price_map = {
@@ -25,9 +25,9 @@ item_price_map = {
     "U": 40,
     "V": 50,
     "W": 20,
-    "X": 90,
+    "X": 17,
     "Y": 10,
-    "Z": 50
+    "Z": 21,
 }
 
 # Order of offers should be Highest value -> Lowest value
@@ -74,6 +74,8 @@ specials = {
         "U": (
             OfferType2(multiple=4, item="U"),
         ),
-    }
+    },
+    OfferTypes.TYPE_3: (
+        OfferType3(multiple=3, items=("S", "T", "X", "Y", "Z"), value=45)
+    )
 }
-

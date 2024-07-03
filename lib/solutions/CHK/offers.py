@@ -30,13 +30,11 @@ class OfferType2:
 class OfferType3:
     """ Buy any x amount of a group of items for y amount """
     multiple: int
-    items: list[str]
+    items: tuple[str]
     value: int
 
-    def __init__(self, multiple: int = 0, items: list[str]= None, value: int = None) -> None:
+    def __init__(self, multiple: int = 0, items: tuple[str]= None, value: int = None) -> None:
         self.multiple = multiple
-        self.items = items or []
+        self.items = items or ()
         self.value = value or 0
-
-
 

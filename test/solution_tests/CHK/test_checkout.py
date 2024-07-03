@@ -39,7 +39,7 @@ class TestCheckout():
             ("Q" * 3, 80),
             ("R", 50),
             ("RRRQ", 150),
-            ("S", 30),
+            ("S", 20),
             ("T", 20),
             ("U", 40),
             ("UUUU", 120),
@@ -47,9 +47,9 @@ class TestCheckout():
             ("VV", 90),
             ("VVV", 130),
             ("W", 20),
-            ("X", 90),
+            ("X", 17),
             ("Y", 10),
-            ("Z", 50),
+            ("Z", 21),
             ("STX", 45),
             ("TXY", 45),
             ("XYZ", 45),
@@ -64,4 +64,3 @@ class TestCheckout():
     @pytest.mark.parametrize("skus", ("ABZD", 1, True))
     def test_illegal_input(self, skus):
         assert checkout_solution.checkout(skus) == -1
-

@@ -22,6 +22,8 @@ def checkout(skus: str) -> int:
 def calculate_total(item_count: dict, item_price_map: dict) -> int:     
     item_count = process_type2_offers(item_count)
 
+    # process_type3_offers()
+
     total_value = 0
     for item, price in item_price_map.items():
         if item not in specials[OfferTypes.TYPE_1].keys():
