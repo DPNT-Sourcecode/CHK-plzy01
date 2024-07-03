@@ -76,6 +76,6 @@ specials = {
         ),
     },
     OfferTypes.TYPE_3: (
-        OfferType3(multiple=3, items=("S", "T", "X", "Y", "Z"), value=45)
+        OfferType3(multiple=3, items=("S", "T", "X", "Y", "Z"), value=45),
     )
 }

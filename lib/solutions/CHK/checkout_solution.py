@@ -63,3 +63,13 @@ def process_type2_offers(item_count: dict) -> dict:
             item_count[offer.item] = max(item_count[offer.item] - group_count, 0)       
     
     return item_count
+
+
+def process_type3_offers(item_count: dict, item_price_map: dict):
+    for offer in specials[OfferTypes.TYPE_3]:
+        eligible_item_total = 0
+        for item in offer.items:
+            eligible_item_total += item_count[item]
+    
+    
+    sorted_item_price_map = sorted(item_price_map.items(), key=lambda item: item[1], reverse=True)
