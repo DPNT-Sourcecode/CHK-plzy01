@@ -65,11 +65,21 @@ def process_type2_offers(item_count: dict) -> dict:
     return item_count
 
 
-def process_type3_offers(item_count: dict, item_price_map: dict):
+def process_type3_offers(item_count: dict, item_price_map: dict) -> dict:
     for offer in specials[OfferTypes.TYPE_3]:
         eligible_item_total = 0
         for item in offer.items:
             eligible_item_total += item_count[item]
     
+    total_discount_value = eligible_item_total %
     
+    # Gives us a mapping of items sorted by value, in descending order.
     sorted_item_price_map = sorted(item_price_map.items(), key=lambda item: item[1], reverse=True)
+
+    # Highest value items should be discounted first.
+    for item in sorted_item_price_map:
+        while item_count[item] > 0 and eligible_item_total > 0:
+            item_count[item] -= 1
+            eligible_item_total -= 1
+    
+
