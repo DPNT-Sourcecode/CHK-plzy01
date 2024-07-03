@@ -50,6 +50,12 @@ class TestCheckout():
             ("X", 90),
             ("Y", 10),
             ("Z", 50),
+            ("STX", 45),
+            ("TXY", 45),
+            ("XYZ", 45),
+            ("YZS", 45),
+            ("ZST", 45),
+            ("ZXS", 45),
         )
     )
     def test_checkout(self, skus, expected_total):
@@ -58,3 +64,4 @@ class TestCheckout():
     @pytest.mark.parametrize("skus", ("ABZD", 1, True))
     def test_illegal_input(self, skus):
         assert checkout_solution.checkout(skus) == -1
+
